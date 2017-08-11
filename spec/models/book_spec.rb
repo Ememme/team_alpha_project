@@ -7,7 +7,7 @@ RSpec.describe User do
   end
 
   describe 'database columns' do
-  	it { should have_db_column :book_unique_id }
+  	it { should have_db_column :book_uid }
   	it { should have_db_column :owner_id }
   	it { should have_db_column :borrower_id }
   	it { should have_db_column :title }
