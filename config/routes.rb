@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  #get 'welcome/index'
 
   devise_for :users
-  get 'welcome/index'
-  #devise_for :users
-  root to: "welcome#index"
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  authenticated :user do
+    root 'welcome#index'
+  end
+
+  unauthenticated :user do
+    devise_scope :user do
+      get '/' => 'devise/sessions#new'
+    end
+  end
 end
