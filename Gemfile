@@ -42,7 +42,7 @@ gem 'factory_girl'
 gem 'ffaker'
 gem 'haml'
 gem 'rspec'
-gem 'rubocop'
+gem 'rubocop', '~> 0.49.1', require: false
 gem 'shoulda-matchers'
 gem 'simple_form'
 
