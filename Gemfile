@@ -41,9 +41,8 @@ gem 'devise'
 gem 'factory_girl'
 gem 'ffaker'
 gem 'haml'
-gem 'rspec'
 gem 'rubocop', '~> 0.49.1', require: false
-gem 'shoulda-matchers'
+gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
 gem 'simple_form'
 
 # Use Capistrano for deployment
@@ -55,6 +54,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
 
 end
 
