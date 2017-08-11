@@ -1,24 +1,76 @@
-# README
+# ..:: Bookshelfy - Alpha Team Project ::..
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![codebeat badge](https://codebeat.co/assets/svg/badges/A-398b39-669406e9e1b136187b91af587d4092b0160370f271f66a651f444b990c2730e9.svg)](https://codebeat.co/projects/github-com-netgurucodecollege-team_alpha_project-master)
 
-Things you may want to cover:
+# Technology stack :gem:
 
-* Ruby version
+Name |  Version |
+| :--: | :---: |
+| [Ruby](https://www.ruby-lang.org) | 2.4.1 |
+| [Ruby on Rails](http://www.rubyonrails.org/) | 5.1.2 |
+| PostgreSQL | 9.6.4 |
 
-* System dependencies
+# Browser support
 
-* Configuration
+Name |  Version |
+| :--: | :---: |
+| IE | 10, 11 |
+| Chrome | newest |
+| Firefox | newest |
+| Safari | 7 and greater |
+| Opera | 15 and greater |
 
-* Database creation
+# Prerequisites :coffee:
 
-* Database initialization
+## You will need the following things properly installed on your machine..
 
-* How to run the test suite
+* PostgreSQL
 
-* Services (job queues, cache servers, search engines, etc.)
+# Installation :books:
 
-* Deployment instructions
+## Do following things if it is your initial setup
 
-* ...
+  * `cd ~/Developer/`
+  * `git clone git@github.com:NetguruCodeCollege/team_alpha_project.git'
+  * `cd team_alpha_project`
+  * `bundle install`
+  * create database with default seeds `rake db:create db:schema:load && rake db:seed`
+
+# Running / Development :shoe:
+
+## IF you want to run a project on your local machine, it is super easy, just do:
+
+  * `cd ~/Developer/team_alpha_project`
+  * `rails s`
+
+# Running Tests :diamonds:
+
+## We do believe in specs!
+
+  * `bundle exec rspec`
+
+# Deploying :bullettrain_side:
+
+## How to make deploy with current changes?
+
+  * lorem ipsum
+
+# Accessto production :bullettrain_side:
+
+## How to get access production server & database
+
+  * lorem ipsum
+
+# Worth to read
+
+  * Here we can place some additional documentation specific to project that is Worth
+    knowing
+
+
+# Troubleshooting :handbag:
+
+  * Some specific, often occuring things that can go wrong during setup of project.
+
+## Other valuable info
+
+  * lorem ipsum dolor
