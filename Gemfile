@@ -32,6 +32,20 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#ToDo zrobic porzadek w grupach gemow
+gem 'active_decorator'
+gem 'better_errors'
+gem 'bootstrap-sass'
+gem 'byebug'
+gem 'devise'
+gem 'factory_girl'
+gem 'ffaker'
+gem 'haml'
+gem 'rspec'
+gem 'rubocop'
+gem 'shoulda-matchers'
+gem 'simple_form'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -41,6 +55,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+
 end
 
 group :development do
