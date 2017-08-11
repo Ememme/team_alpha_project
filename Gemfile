@@ -45,6 +45,7 @@ gem 'rspec'
 gem 'rubocop', '~> 0.49.1', require: false
 gem 'shoulda-matchers'
 gem 'simple_form'
+gem 'erb2haml'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
