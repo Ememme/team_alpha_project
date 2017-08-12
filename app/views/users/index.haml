@@ -1,0 +1,8 @@
+%h4 All Users
+
+- @users.each do |user|
+  %p
+    = link_to user.login, user
+
+//Maybe we want to show here more data? First_name? Last_name etc?
+//How many books user has etc.? - to rethink
