@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'books/index'
+
+  get 'books/show'
+
+  get 'books/create'
+
+  get 'books/new'
+
+  get 'books/delete'
+
   #get 'welcome/index'
 
   devise_for :users
