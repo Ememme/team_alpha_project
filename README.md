@@ -1,5 +1,7 @@
 # ..:: Bookshelfy - Alpha Team Project ::..
 
+[![CircleCI](https://circleci.com/gh/NetguruCodeCollege/netguru_code_college_todo_app.svg?style=svg)](https://circleci.com/gh/NetguruCodeCollege/team_alpha_project)
+
 [![codebeat badge](https://codebeat.co/assets/svg/badges/A-398b39-669406e9e1b136187b91af587d4092b0160370f271f66a651f444b990c2730e9.svg)](https://codebeat.co/projects/github-com-netgurucodecollege-team_alpha_project-master)
 
 # What is it? :books: :bowtie: :poodle:
@@ -18,7 +20,6 @@ Name |  Version |
 
 Name |  Version |
 | :--: | :---: |
-| IE | 10, 11 |
 | Chrome | newest |
 | Firefox | newest |
 | Safari | 7 and greater |
@@ -35,7 +36,7 @@ Name |  Version |
 ## Do following things if it is your initial setup
 
   * `cd ~/Developer/`
-  * `git clone git@github.com:NetguruCodeCollege/team_alpha_project.git'
+  * clone repo with `git clone git@github.com:NetguruCodeCollege/team_alpha_project.git`
   * `cd team_alpha_project`
   * `bundle install`
   * create database with default seeds `rake db:create db:schema:load && rake db:seed`
