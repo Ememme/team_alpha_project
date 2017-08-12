@@ -4,7 +4,7 @@
 
 # What is it? :books: :bowtie: :poodle:
 
-Bookshelfy is designed as an app for private books sharing. It is suppoused to be more than just a private library. It is made for bookwarms, who want to share their favourite pieces, talk about them and build a flourishing community. Assuming people still want to read analog books and would like to share them with others, this app will be a great success!
+Bookshelfy is designed as an app for a private books sharing. It is supposed to be more than just a private library. It is made for bookworms, who want to share their favourite pieces, talk about them and build a flourishing community. Assuming people still want to read analog books and would like to share them with others, this app will be a great success!
 
 # Technology stack :gem:
 
