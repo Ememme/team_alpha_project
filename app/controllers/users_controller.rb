@@ -6,8 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @books_borrowed = Book.all #where(borrower_id=current_user.id) - to rethink
-    #@books_to_lend = Book.all #where books belong to current_user - to rethink
+
   end
 
   private
