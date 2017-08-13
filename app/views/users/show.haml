@@ -1,0 +1,15 @@
+//= button_to "Add book", new_user_book_path, method: :get, class: 'btn btn-xs pull-right'
+// I didn't finish button above, cause @majki is doing book controller etc
+
+%h2= "User #{@user.email}"
+
+%h2 My books to lend:
+
+- @user.own_books.each do |book|
+  %p= link_to "#{book.id} Title: #{book.title}, Author: #{book.author}", user_book_path(@user,@user.own_books)
+  %br/
+
+%h2 My borrowed books:
+- @user.borrowed_books.each do |book|
+  %p= link_to "#{book.id} Title: #{book.title}, Author: #{book.author}", user_book_path(@user,@user.borrowed_books)
+  %br/
