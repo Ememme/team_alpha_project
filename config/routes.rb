@@ -4,14 +4,14 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      put 'like', to: 'links#upvote'
-      put 'dislike', to: 'links#downvote'
+      put 'like', to: 'books#upvote'
+      put 'dislike', to: 'books#downvote'
     end
 
     resources :books do
       member do
-        put "like", to:    "books#upvote"
-        put "dislike", to: "books#downvote"
+        put 'like', to:    'books#upvote'
+        put 'dislike', to: 'books#downvote'
       end
     end
   end

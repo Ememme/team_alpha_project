@@ -22,8 +22,7 @@ class BooksController < ApplicationController
 
   def destroy; end
 
-  def new
-  end
+  def new; end
 
   def upvote
     @book = Book.find(params[:id])
