@@ -9,15 +9,17 @@
           %h2 My books to lend:
           - @user.books.each do |book|
             %p= link_to "Title: #{book.title}, Author: #{book.author}", user_book_path(@user,book)
-            - if book.book_status == 1
-              = "Borrowed by #{book.borrower_id}"
-              .btn.btn-success Change book status
+            -# - if book.book_status == 1
+            -#   = "Borrowed by #{book.borrower_id}"
+            -#   .btn.btn-success Change book status
               //, book.change_book_status
             %br/
 
       .col-md-6.text-center
         .well
           %h2 My borrowed books:
-          - @user.borrowed_books.each do |book|
-            %p= link_to "Title: #{book.title}, Author: #{book.author}", user_book_path(@user,book)
+          - @user.loans.each do |loan|
+            %p= "Book: #{loan.book_id} is borrowed by #{loan.user_id}"
+
+            //link_to  "Title: #{loan.book.title}, Author: #{loan.book.author}", user_book_path(@user,book)
             %br/
