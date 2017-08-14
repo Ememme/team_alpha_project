@@ -3,6 +3,7 @@
 <p>
 <% @books.each do |book| %>
   <%= book.title %>
+  = link_to 'Log In', new_user_session_path
   <br>
 <%end%>
 </p>
