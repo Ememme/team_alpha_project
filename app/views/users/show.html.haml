@@ -1,0 +1,22 @@
+.container-fluid
+  %h2= "User #{@user.email}"
+  = button_to "Add book to lend", new_user_book_path(@user)
+  %br
+    .row
+      .col-md-6.text-center
+        .well
+          %h2 My books to lend:
+          - @user.books.each do |book|
+            %p= link_to "Title: #{book.title}, Author: #{book.author}", user_book_path(@user,book)
+            - if book.book_status == 1
+              = "Borrowed by #{book.borrower_id}"
+              .btn.btn-success Change book status
+              //, book.change_book_status
+            %br/
+
+      .col-md-6.text-center
+        .well
+          %h2 My borrowed books:
+          - @user.borrowed_books.each do |book|
+            %p= link_to "Title: #{book.title}, Author: #{book.author}", user_book_path(@user,book)
+            %br/
