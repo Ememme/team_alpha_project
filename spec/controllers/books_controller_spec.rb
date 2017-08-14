@@ -1,40 +1,43 @@
 require 'rails_helper'
 
-RSpec.describe BooksController, type: :controller do
-
-  describe "GET #index" do
-    it "returns http success" do
+RSpec.describe(BooksController, type: :controller) do
+  describe 'GET #index' do
+    it 'returns http success' do
       get :index
       expect(response).to have_http_status(:success)
     end
   end
+=begin
+  describe 'GET #show' do
+    let!(:book) { create(:book) }
 
-  describe "GET #show" do
-    it "returns http success" do
-      get :show
+    it 'returns http success' do
+      get :show, params: { id: book.id }
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #create" do
-    it "returns http success" do
-      get :create
+  describe 'GET #create' do
+    let!(:book) { create(:book) }
+
+    let(:book) { FactoryGirl.attributes_for(:book) }
+
+    it 'returns http success' do
+      get :create, params: { book: book }
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #new" do
-    it "returns http success" do
+  describe 'GET #new' do
+    let!(:book) { create(:book) }
+
+    it 'returns http success' do
       get :new
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #delete" do
-    it "returns http success" do
-      get :delete
-      expect(response).to have_http_status(:success)
-    end
+  describe 'GET #delete' do
   end
-
+=end
 end

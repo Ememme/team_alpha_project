@@ -25,14 +25,25 @@ class BooksController < ApplicationController
   def new
   end
 
+  def upvote
+    @book = Book.find(params[:id])
+    @book.upvote_by current_user
+    redirect_back(fallback_location: root_path)
+  end
+
+  def downvote
+    @book = Book.find(params[:id])
+    @book.downvote_by current_user
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
-    def set_book
-      @book = Book.find(params[:id])
-    end
+  def set_book
+    @book = Book.find(params[:id])
+  end
 
-    def book_params
-      params.require(:book).permit(:title, :author, :description, :user_id, :book_uid)
-    end
-
+  def book_params
+    params.require(:book).permit(:title, :author, :description, :user_id, :book_uid)
+  end
 end
