@@ -23,6 +23,7 @@ class BooksController < ApplicationController
   def destroy; end
 
   def new
+    @book = Book.new
   end
 
   private
