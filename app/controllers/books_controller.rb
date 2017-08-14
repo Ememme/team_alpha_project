@@ -23,6 +23,7 @@ class BooksController < ApplicationController
   def destroy; end
 
   def new
+    @book = Book.new
   end
 
   private
@@ -32,6 +33,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :author, :description, :user_id, :book_uid)
+    params.require(:book).permit(:title, :author, :description, :user_id, :book_uid, :cover)
   end
 end
