@@ -6,7 +6,9 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show; end
+  def show
+    @book = Book.where(id: :book_id)
+  end
 
   private
 
