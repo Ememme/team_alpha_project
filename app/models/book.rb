@@ -3,6 +3,8 @@ class Book < ApplicationRecord
   belongs_to :user, class_name: :User
   has_many :loans
 
+  acts_as_votable
+
   # def book_status
   #   if borrower_id == nil
   #     @book_status = 0
