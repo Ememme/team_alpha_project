@@ -25,6 +25,18 @@ class BooksController < ApplicationController
   def new
   end
 
+  def upvote
+    @book = Book.find(params[:id])
+    @book.upvote_by current_user
+    redirect_back(fallback_location: root_path)
+  end
+
+  def downvote
+    @book = Book.find(params[:id])
+    @book.downvote_by current_user
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
   def set_book

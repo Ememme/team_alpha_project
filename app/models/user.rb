@@ -8,6 +8,8 @@ class User < ApplicationRecord
   #has_many :borrowed_books, class_name: :Book, foreign_key: :borrower_id
   has_many :loans
 
+  acts_as_votable
+
   #scope :books_to_borrow, -> { books.where(borrower_id: nil) }
   #scope :my_borrowed_books, -> { books.where.not(borrower_id: nil) }
 end
