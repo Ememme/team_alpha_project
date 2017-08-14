@@ -37,7 +37,6 @@ gem 'active_decorator'
 gem 'better_errors'
 gem 'bootstrap-sass'
 gem 'devise'
-gem 'factory_girl'
 gem 'ffaker'
 gem 'haml'
 gem 'rubocop', '~> 0.49.1', require: false
@@ -52,10 +51,12 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
+  gem 'binding_of_caller'
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'rspec-rails'
-
+  gem 'selenium-webdriver'
 end
 
 group :development do
