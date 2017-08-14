@@ -3,6 +3,8 @@ class Book < ApplicationRecord
   belongs_to :user, class_name: :User
   has_many :loans
 
+  #scope :books_to_lend, where(user_id: nil)
+
   # def book_status
   #   if borrower_id == nil
   #     @book_status = 0

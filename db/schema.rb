@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 20170814160143) do
     t.string "author"
     t.text "description"
     t.integer "book_uid"
-    t.bigint "user_id"
-    t.string "cover"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.string "cover"
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
