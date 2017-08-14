@@ -1,20 +1,21 @@
 %h2= "User #{@user.email}"
-
+= button_to "Add book to lend", new_user_book_path(@user)
 .container-fluid
   .row
-    .col-xs-6.text-center
-    %h2 My books to lend:
-    - @user.own_books.each do |book|
-      %p= link_to "#{book.id} Title: #{book.title}, Author: #{book.author}", user_book_path(@user)
-      - if book.book_status == 1
-        = book.borrower_id
-        //= link_to book.change_book_status, "Change book status"
+    .col-md-6.text-center
+      %h2 My books to lend:
+      - @user.books.each do |book|
+        %p= link_to "#{book.id} Title: #{book.title}, Author: #{book.author}", user_book_path(@user)
 
-      %br/
-    = button_to "Add book to lend", new_user_book_path(@user)
+        - if book.book_status == 1
+          = book.borrower_id
+        //= link_to "Change book status", book.change_book_status
 
-    .col-xs-6.text-center
-    %h2 My borrowed books:
-    - @user.borrowed_books.each do |book|
-      %p= link_to "#{book.id} Title: #{book.title}, Author: #{book.author}", user_book_path(@user)
-      %br/
+        %br/
+
+
+    .col-md-6.text-center
+      %h2 My borrowed books:
+      - @user.borrowed_books.each do |book|
+        %p= link_to "#{book.id} Title: #{book.title}, Author: #{book.author}", user_book_path(@user)
+        %br/

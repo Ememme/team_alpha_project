@@ -15,5 +15,4 @@ class Book < ApplicationRecord
       borrower_id = nil
     end
   end
-
 end
