@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170811112222) do
+ActiveRecord::Schema.define(version: 20170814135831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 20170811112222) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "borrower_id"
-    t.bigint "owner_id"
+    t.bigint "user_id"
     t.index ["borrower_id"], name: "index_books_on_borrower_id"
-    t.index ["owner_id"], name: "index_books_on_owner_id"
+    t.index ["user_id"], name: "index_books_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,6 +48,6 @@ ActiveRecord::Schema.define(version: 20170811112222) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "books", "users"
   add_foreign_key "books", "users", column: "borrower_id"
-  add_foreign_key "books", "users", column: "owner_id"
 end
