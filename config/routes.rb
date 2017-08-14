@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   #get 'welcome/index'
 
+  resources :users do
+    resources :book
+ end
+
   devise_for :users
 
   authenticated :user do
