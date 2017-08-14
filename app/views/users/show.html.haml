@@ -1,5 +1,6 @@
 .container-fluid
   %h2= "User #{@user.email}"
+  = gravatar_for @user
   = button_to "Add book to lend", new_user_book_path(@user)
   %br
     .row
