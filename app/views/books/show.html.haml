@@ -1,0 +1,32 @@
+.container
+  %br/
+  %h1= @book.title
+  %br/
+  .well
+    .row
+      .col-md-4 img
+      .col-md-8
+        %b Author: 
+        #{@book.author} 
+        %br/
+        %b Description: 
+        #{@book.description}
+        %br/
+        %b Rating:
+        5/5
+.container
+  %h2 Users offering this book:
+  %br/
+  .well
+    .row
+      .col-md-4 profilepic
+      .col-md-4 username
+      .col-md-4
+        .btn.btn-success Borrow
+  %br/
+  .well
+    .row
+      .col-md-4 profilepic
+      .col-md-4 username
+      .col-md-4
+        .btn.btn-success Borrow   

@@ -5,14 +5,11 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show
-
-  end
+  def show; end
 
   private
 
   def fetch_user
     @user = User.find(params[:id])
   end
-
 end
