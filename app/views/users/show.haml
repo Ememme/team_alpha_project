@@ -20,3 +20,4 @@
            - @user.borrowed_books.each do |book|
              %p= link_to "Title: #{book.title}, Author: #{book.author}", user_book_path(@user,book)
              %br/
+

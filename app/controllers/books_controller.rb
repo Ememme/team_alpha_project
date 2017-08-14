@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show destroy]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @books = Book.all
