@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :books, only: [:index, :show]
-
   #get 'welcome/index'
 
   resources :users do
-    resources :book
- end
+    resources :books
+  end
 
   devise_for :users
 
