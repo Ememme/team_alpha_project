@@ -1,4 +1,4 @@
-= simple_form_for(@book) do |f|
+= simple_form_for([:user, @book]) do |f|
   = f.error_notification
 
   .form-inputs
@@ -9,6 +9,9 @@
 
   .form-inputs
     = f.text_area :description
+
+  .form-inputs
+    = f.file_field :cover
 
   .form-actions
     = f.button :submit
