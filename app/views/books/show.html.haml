@@ -15,23 +15,32 @@
         %br/
         %b Rating:
         5/5
+        %br/
+        = "#{@book.user.first_name} #{@book.user.last_name}"
+        %br/
+        - if (@book.loans.empty?|| @book.loans.last.status == 0 )
+          .btn.btn-success
+            = link_to 'Borrow', new_user_book_loan_path( book_id: @book.id, user_id: current_user.id, status: 1 )
+        - else
+          .btn.btn-success
+            = link_to 'Return', new_user_book_loan_path( book_id: @book.id, user_id: current_user.id, status: 0 )
+
 .container
   %h2 Users offering this book:
   - Book.where(title: @book.title) && Book.where(author: @book.author).each do |book|
     %br/
     .well
       .row
-        .col-md-3
+        .col-md-4
           = image_tag("#{book.user.avatar}", alt: "user avatar", style:"width:50px;height:50px;")
-        .col-md-3 
-          = "#{book.user.first_name} #{book.user.last_name}"
-        .col-md-3 Status
-        .col-md-3
-          .btn.btn-success
-            = link_to 'Borrow', new_user_book_loan_path( book_id: @book.id, user_id: current_user.id, status: 1 )
-          .btn.btn-success
-            = link_to 'Lend', new_user_book_loan_path( book_id: @book.id, user_id: current_user.id, status: 0 )
-            
+        .col-md-4
+          = link_to "#{book.user.first_name} #{book.user.last_name}", user_path(book.user)
+        .col-md-4
+          = link_to "#{book.id} #{book.title} #{book.author}", user_book_path(book_id = book.id)
+
+
+
+
 
   #disqus_thread
   :javascript
