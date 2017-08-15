@@ -45,7 +45,8 @@ gem 'rubocop', '~> 0.49.1', require: false
 gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
 gem 'simple_form'
 gem 'erb2haml'
-gem 'ransack'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
