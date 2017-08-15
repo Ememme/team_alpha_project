@@ -29,7 +29,9 @@
         .col-md-3
           .btn.btn-success
             = link_to 'Borrow', new_user_book_loan_path( book_id: @book.id, user_id: current_user.id, status: 1 )
+          .btn.btn-success
             = link_to 'Lend', new_user_book_loan_path( book_id: @book.id, user_id: current_user.id, status: 0 )
+            
 
   #disqus_thread
   :javascript
