@@ -14,14 +14,6 @@ RSpec.describe User do
 
   describe 'associations' do
   	it { is_expected.to have_many :books }
+    it { is_expected.to have_many :loans }
   end
 end
-
-
-# require "rails_helper"
-
-# describe User do
-#   describe "associations" do
-#     it { should have_db_column :encrypted_password}
-#   end
-# end
