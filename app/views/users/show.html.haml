@@ -7,8 +7,18 @@
       .col-md-6.text-center
         .well
           %h2 My books to lend:
+          @loan
           - @user.books.each do |book|
+            borrowed to //tylko przy wypozyczonych
+            w book jest owner
+            w loan jest kto wypozyczyl
+            %br/
+            return book
             %p= link_to "Title: #{book.title}, Author: #{book.author}", user_book_path(@user,book)
+            %br/
+            %p= "Borrowed by #{loan.book.user_id}"
+            %br/
+            %p= "Returned"
             -# - if book.book_status == 1
             -#   = "Borrowed by #{book.borrower_id}"
             -#   .btn.btn-success Change book status
@@ -19,6 +29,8 @@
         .well
           %h2 My borrowed books:
           - @user.loans.each do |loan|
+            from
+            %br/
             %p= link_to "Book: #{loan.book.title} is borrowed by #{loan.user.email}", user_book_path(@user,loan)
 
             %br/
