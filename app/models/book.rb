@@ -9,13 +9,4 @@ class Book < ApplicationRecord
 
   acts_as_votable
 
-  # # def borrowed?
-  # #@book.loans.last = nil || @book.loans.last.status == 0
-  # #   if
-  # #     @loan.last.status != 0
-  # #     true
-  # #   else
-  # #     false
-  # #   end
-  # end
 end
