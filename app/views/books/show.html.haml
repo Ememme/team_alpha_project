@@ -21,7 +21,7 @@
         - if (@book.loans.empty?|| @book.loans.last.status == 0 )
           .btn.btn-success
             = link_to 'Borrow', new_user_book_loan_path( book_id: @book.id, user_id: current_user.id, status: 1 )
-        - else
+        - elsif (@book.user == current_user)
           .btn.btn-success
             = link_to 'Return', new_user_book_loan_path( book_id: @book.id, user_id: current_user.id, status: 0 )
 
@@ -36,7 +36,7 @@
         .col-md-4
           = link_to "#{book.user.first_name} #{book.user.last_name}", user_path(book.user)
         .col-md-4
-          = link_to "#{book.id} #{book.title} #{book.author}", user_book_path(book_id = book.id)
+          = link_to "#{book.id} #{book.title} #{book.author}", user_book_path(current_user, book)
 
 
 

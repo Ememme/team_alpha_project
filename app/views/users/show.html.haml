@@ -16,7 +16,7 @@
             return book
             %p= link_to "Title: #{book.title}, Author: #{book.author}", user_book_path(@user,book)
             %br/
-            %p= "Borrowed by #{loan.book.user_id}"
+            -# %p= "Borrowed by #{loan.book.user_id}"
             %br/
             %p= "Returned"
             -# - if book.book_status == 1
