@@ -27,12 +27,6 @@ ActiveRecord::Schema.define(version: 20170814170754) do
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
-  create_table "disqus_examples", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "loans", force: :cascade do |t|
     t.bigint "book_id"
     t.bigint "user_id"

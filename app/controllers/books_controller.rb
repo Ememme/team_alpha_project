@@ -6,23 +6,26 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
-  def show; end
+  def show
+    #@loan = Loan.new(book_params,current_user,status: 1)
+  end
 
   def create
     @book = Book.new(book_params)
-
-    respond_to do |format|
+    @book.user_id = current_user.id
       if @book.save
-        format.html { redirect_to @book, notice: "Book was successfully created." }
+        redirect_to user_book_path(current_user,@book), notice: "Book was successfully created."
       else
-        format.html { render :new }
+        render :new
       end
-    end
+
   end
 
   def destroy; end
 
-  def new; end
+  def new
+    @book = Book.new
+  end
 
   def upvote
     @book = Book.find(params[:id])

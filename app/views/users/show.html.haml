@@ -1,7 +1,7 @@
 .container-fluid
   %h2= "User #{@user.email}"
   = gravatar_for @user
-  = button_to "Add book to lend", new_user_book_path(@user)
+  = link_to "Add book to lend", new_user_book_path(@user)
   %br
     .row
       .col-md-6.text-center
@@ -19,7 +19,6 @@
         .well
           %h2 My borrowed books:
           - @user.loans.each do |loan|
-            %p= "Book: #{loan.book_id} is borrowed by #{loan.user_id}"
+            %p= link_to "Book: #{loan.book.title} is borrowed by #{loan.user.email}", user_book_path(@user,loan)
 
-            //link_to  "Title: #{loan.book.title}, Author: #{loan.book.author}", user_book_path(@user,book)
             %br/

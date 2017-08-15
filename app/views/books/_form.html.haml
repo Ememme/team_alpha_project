@@ -1,11 +1,11 @@
-= simple_form_for(@book) do |f|
+= simple_form_for([:user,@book]) do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :title
 
   .form-inputs
-    = f.input :author  
+    = f.input :author
 
   .form-inputs
     = f.text_area :description
