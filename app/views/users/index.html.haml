@@ -1,10 +1,11 @@
 .container-fluid
   %h4 All Users
-  .well
-    - @users.each do |user|
-      %p
-        = image_tag("#{user.avatar}", alt: "user avatar", style:"width:100px;height:100px;")
-        = link_to user.login, user
+  - @users.each do |user|
+    .col-md-2
+      .well.well-sm
+        %p
+          = image_tag("#{user.avatar}", alt: "user avatar", style:"width:100px;height:100px;")
+          = link_to user.login, user
 
 
 //Maybe we want to show here more data? First_name? Last_name etc?
