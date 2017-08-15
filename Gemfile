@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 
 #ToDo zrobic porzadek w grupach gemow
 gem 'active_decorator'
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'better_errors'
 gem 'bootstrap-sass'
 gem 'carrierwave'

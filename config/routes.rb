@@ -3,7 +3,18 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users do
-    resources :books
+    member do
+      put 'like', to: 'books#upvote'
+      put 'dislike', to: 'books#downvote'
+    end
+
+    resources :books do
+      member do
+        put 'like', to:    'books#upvote'
+        put 'dislike', to: 'books#downvote'
+      end
+        # resources :loans
+    end
   end
 
   get '*path', to: redirect('/')

@@ -3,7 +3,9 @@
   .well
     - @users.each do |user|
       %p
+        = image_tag("#{user.avatar}", alt: "user avatar", style:"width:100px;height:100px;")
         = link_to user.login, user
+
 
 //Maybe we want to show here more data? First_name? Last_name etc?
 //How many books user has etc.? - to rethink
