@@ -13,7 +13,7 @@ Rails.application.routes.draw do
         put 'like', to:    'books#upvote'
         put 'dislike', to: 'books#downvote'
       end
-        # resources :loans
+      resources :loans
     end
   end
 
