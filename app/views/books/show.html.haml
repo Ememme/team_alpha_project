@@ -4,7 +4,8 @@
   %br/
   .well
     .row
-      .col-md-4 img
+      .col-md-4 
+        = image_tag("#{@book.cover}", alt: "book cover", style:"width:300px;height:300px;")
       .col-md-8
         %b Author:
         #{@book.author}
@@ -14,28 +15,19 @@
         %br/
         %b Rating:
         5/5
-
-        -# = link_to "Borrow", new_user_book_loan_path(@book,current_user,status=1), method: :get, class: "btn.btn-success"
-
-        -# = link_to like_user_book_url(id: book.id, user_id: current_user.id), method: :put, class: "btn btn-default btn-sm" do
-        -#   %span.glyphicon.glyphicon-star
-        -#   Upvote
 .container
   %h2 Users offering this book:
-  %br/
-  .well
-    .row
-      .col-md-4 profilepic
-      .col-md-4 username
-      .col-md-4
-        .btn.btn-success Borrow
-  %br/
-  .well
-    .row
-      .col-md-4 profilepic
-      .col-md-4 username
-      .col-md-4
-        .btn.btn-success Borrow
+  - Book.where(title: @book.title) && Book.where(author: @book.author).each do |book|
+    %br/
+    .well
+      .row
+        .col-md-3 
+          = image_tag("#{book.user.avatar}", alt: "user avatar", style:"width:50px;height:50px;")
+        .col-md-3 
+          = book.user.first_name + " " + book.user.last_name
+        .col-md-3 Status
+        .col-md-3
+          .btn.btn-success Borrow
 
   #disqus_thread
   :javascript
