@@ -4,7 +4,7 @@
   %br/
   .well
     .row
-      .col-md-4 
+      .col-md-4
         = image_tag("#{@book.cover}", alt: "book cover", style:"width:300px;height:300px;")
       .col-md-8
         %b Author:
@@ -21,13 +21,15 @@
     %br/
     .well
       .row
-        .col-md-3 
+        .col-md-3
           = image_tag("#{book.user.avatar}", alt: "user avatar", style:"width:50px;height:50px;")
         .col-md-3 
           = "#{book.user.first_name} #{book.user.last_name}"
         .col-md-3 Status
         .col-md-3
-          .btn.btn-success Borrow
+          .btn.btn-success
+            = link_to 'Borrow', new_user_book_loan_path( book_id: @book.id, user_id: current_user.id, status: 1 )
+            = link_to 'Lend', new_user_book_loan_path( book_id: @book.id, user_id: current_user.id, status: 0 )
 
   #disqus_thread
   :javascript
