@@ -14,6 +14,12 @@
         %br/
         %b Rating:
         5/5
+
+        -# = link_to "Borrow", new_user_book_loan_path(@book,current_user,status=1), method: :get, class: "btn.btn-success"
+
+        -# = link_to like_user_book_url(id: book.id, user_id: current_user.id), method: :put, class: "btn btn-default btn-sm" do
+        -#   %span.glyphicon.glyphicon-star
+        -#   Upvote
 .container
   %h2 Users offering this book:
   %br/
