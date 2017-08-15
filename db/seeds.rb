@@ -27,7 +27,7 @@ if Book.count < 200
       author: FFaker::Book.author,
       description: FFaker::Book.description,
       user: users.sample,
-      cover: FFaker::Book.cover,
+      cover: File.open(Rails.root + "public/uploads/#{rand(1..6)}.jpg"),
     )
     print "*"
   end
