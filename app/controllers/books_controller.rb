@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    #@loan = Loan.new(book_params,current_user,status: 1)
+    @loan = Loan.new
   end
 
   def create
