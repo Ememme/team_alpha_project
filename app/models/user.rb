@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :books
   has_many :loans
 
-  # validates :login, presence: { message: "can't be blank" }
+  # TODO validates :login, presence: { message: "can't be blank" }
 
   acts_as_votable
 

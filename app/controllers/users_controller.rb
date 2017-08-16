@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :fetch_user, only: %i(show)
   before_action :authenticate_user!
 
   def index
@@ -10,15 +9,10 @@ class UsersController < ApplicationController
 
   def show
     @book = Book.where(id: :book_id)
+    @user = User.find(params[:id])
   end
 
   private
-
-  def fetch_user
-    #if user_signed_in?
-    @user = User.find(params[:id])
-    #else redirect_to new_user_session_path
-  end
 
   def upvote
     @link = Link.find(params[:id])
