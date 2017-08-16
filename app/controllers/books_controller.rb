@@ -50,7 +50,7 @@ class BooksController < ApplicationController
 
   def update
     if @book.update(book_params)
-      redirect_to @book, notice: "Book updated!"
+      redirect_to user_book_path(current_user,@book), notice: "Book updated!"
     else
       render :edit, notice: "Book not updated."
     end
