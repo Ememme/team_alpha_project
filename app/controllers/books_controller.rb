@@ -3,7 +3,6 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    # @user = User.find(params[:id])
     @books = Book.all
     @q = Book.ransack(params[:q])
     @books = @q.result(distinct: true)
