@@ -21,7 +21,7 @@
               %br/
               .btn-group
                 %a.btn.btn-default.btn-sm{:href => user_book_path(id: book.id, user_id: current_user.id)}
-                  = image_tag("#{book.cover}", alt: "book cover", style:"width:200px;height:200px;")
+                  = image_tag("#{book.decorate.cover_dec}", alt: "book cover", style:"width:200px;height:200px;")
                 %br/
                 = link_to like_user_book_url(id: book.id, user_id: current_user.id), method: :put, class:   "btn btn-default btn-sm" do
                   %span.glyphicon.glyphicon-star
@@ -36,7 +36,7 @@
               %br/
               .btn-group
                 %a.btn.btn-default.btn-sm{:href => new_user_session_path}
-                  = image_tag("#{book.cover}", alt: "book cover", style:"width:200px;height:200px;")
+                  = image_tag("#{book.decorate.cover_dec}", alt: "book cover", style:"width:200px;height:200px;")
                 %br/
                 = link_to new_user_session_path, class: "btn btn-default btn-sm" do
                   %span.glyphicon.glyphicon-star

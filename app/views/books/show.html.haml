@@ -5,7 +5,7 @@
   .well
     .row
       .col-md-4
-        = image_tag("#{@book.cover}", alt: "book cover", style:"width:300px;height:300px;")
+        = image_tag("#{@book.decorate.cover_dec}", alt: "book cover", style:"width:300px;height:300px;")
       .col-md-8
         %b Author:
         #{@book.author}
