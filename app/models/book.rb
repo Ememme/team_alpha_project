@@ -1,4 +1,7 @@
 class Book < ApplicationRecord
+  STATUS_BORROWED = 1
+  STATUS_RETURNED = 0
+
   mount_uploader :cover, CoverUploader
 
   belongs_to :user, class_name: :User
@@ -9,11 +12,16 @@ class Book < ApplicationRecord
 
   acts_as_votable
 
-  def borrowed?
-    loans.empty?|| loans.last.status == 0
+  def to_borrow?(current_user)
+    allowed_to_borrow = loans.empty? || loans.last.status == STATUS_RETURNED
+    user != current_user && allowed_to_borrow
   end
 
-  STATUS_BORROWED = 1
-  STATUS_RETURNED = 0
+  def not_to_borrow?(current_user)
+    user == current_user && (loans.empty? || loans.last.status == STATUS_RETURNED)
+  end
 
+  def to_return?(current_user)
+    loans.last.status == STATUS_BORROWED && user == current_user
+  end
 end

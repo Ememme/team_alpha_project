@@ -11,9 +11,6 @@
           %h2 My books to lend:
           @loan
           - @user.books.each do |book|
-            borrowed to //tylko przy wypozyczonych
-            w book jest owner
-            w loan jest kto wypozyczyl
             %br/
             return book
             %p= link_to "Title: #{book.title}, Author: #{book.author}", user_book_path(@user,book)
@@ -33,6 +30,6 @@
           - @user.loans.each do |loan|
             from
             %br/
-            %p= link_to "Book: #{loan.book.title} is borrowed by #{loan.user.email}", user_book_path(@user,loan)
+            %p= link_to "Book: #{loan.book.title} is borrowed by #{loan.user.email}", user_book_path(@user,loan.book)
 
             %br/
