@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      put 'like', to: 'books#upvote'
+      put 'like_member', to: 'books#upvote'
       put 'dislike', to: 'books#downvote'
     end
 
@@ -12,8 +12,11 @@ Rails.application.routes.draw do
       member do
         put 'like', to:    'books#upvote'
         put 'dislike', to: 'books#downvote'
+        post 'borrow', to: 'books#borrow'
       end
-      resources :loans
+      resources :loans, only: [] do
+        post 'return', to: 'loans#return'
+      end
     end
   end
 
