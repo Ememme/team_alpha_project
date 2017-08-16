@@ -19,9 +19,12 @@
         = "#{@book.user.first_name} #{@book.user.last_name}"
         //decorator
         %br/
-        - if @book.borrowed?
+        - if @book.to_borrow?(current_user)
           .btn.btn-success
             = link_to 'Borrow', borrow_user_book_path(@book), method: :post
+        - elsif @book.to_return?(current_user)
+          .btn.btn-success
+            = link_to 'Return', return_user_book_path(@book), method: :post
 
 .container
   %h2 Users offering this book:
