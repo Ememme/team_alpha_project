@@ -20,7 +20,7 @@ AllCops:
     - spec/**/*
     - db/**/*
     - config/**/*
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.4.1
 Style/StringLiterals:
   EnforcedStyle: single_quotes
 Style/AlignHash:
