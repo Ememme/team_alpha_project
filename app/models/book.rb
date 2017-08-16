@@ -17,6 +17,10 @@ class Book < ApplicationRecord
     user != current_user && allowed_to_borrow
   end
 
+  def not_to_borrow?(current_user)
+    user == current_user && (loans.empty? || loans.last.status == STATUS_RETURNED)
+  end
+
   def to_return?(current_user)
     loans.last.status == STATUS_BORROWED && user == current_user
   end
