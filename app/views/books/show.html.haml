@@ -20,7 +20,7 @@
         //decorator
         %br/
         - if @book.borrowed?
-          .btn.btn-success
+          .btn.btn-primary
             = link_to 'Borrow', borrow_user_book_path(@book), method: :post
 
 .container
