@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe User do
   describe 'validations' do
-  	it { is_expected.to validate_presence_of :email }
-    # it { is_expected.to validate_presence_of :login }
+  	it { should validate_presence_of :email }
+    # TODO it { is_expected.to validate_presence_of :login }
   end
 
   describe 'database columns' do
@@ -14,7 +14,7 @@ RSpec.describe User do
   end
 
   describe 'associations' do
-  	it { is_expected.to have_many :books }
-    it { is_expected.to have_many :loans }
+  	it { should have_many :books }
+    it { should have_many :loans }
   end
 end
