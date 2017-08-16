@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   mount_uploader :cover, CoverUploader
-  
+
   belongs_to :user, class_name: :User
   has_many :loans
 
