@@ -24,7 +24,7 @@ class BooksController < ApplicationController
     @loan = Loan.new(
       book: @book,
       user: current_user,
-      status: Loan::STATUS_BORROWED
+      status: Book::STATUS_BORROWED
     )
     if @loan.save!
       redirect_to user_book_path(user_id: current_user.id, id: @loan.book_id), notice: "Loan was successfully created."
@@ -37,7 +37,7 @@ class BooksController < ApplicationController
   #   @loan = Loan.new(
   #     book: book,
   #     user: borrower,
-  #     status: Loan::STATUS_BORROWED
+  #     status: Book::STATUS_BORROWED
   #   )
   #   if @loan.save!
   #     redirect_to user_book_path(user_id: current_user.id, id: @loan.book_id), notice: "Loan was successfully created."
