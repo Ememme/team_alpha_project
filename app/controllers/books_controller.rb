@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show destroy edit update borrow return]
   before_action :authenticate_user!, except: [:index]
@@ -13,7 +15,7 @@ class BooksController < ApplicationController
     @book.user_id = current_user.id
 
     if @book.save
-      redirect_to user_book_path(current_user,@book), notice: "Book was successfully created."
+      redirect_to user_book_path(current_user,@book), notice: 'Book was successfully created.'
     else
       render :new
     end
@@ -26,7 +28,7 @@ class BooksController < ApplicationController
       status: Book::STATUS_BORROWED
     )
     if @loan.save!
-      redirect_to user_book_path(user_id: current_user.id, id: @loan.book_id), notice: "Loan was successfully created."
+      redirect_to user_book_path(user_id: current_user.id, id: @loan.book_id), notice: 'Loan was successfully created.'
     else
       render user_path(user_id: current_user.id)
     end
@@ -40,7 +42,7 @@ class BooksController < ApplicationController
       status: Book::STATUS_RETURNED
     )
     if @loan.save!
-      redirect_to user_book_path(user_id: current_user.id, id: @loan.book_id), notice: "Loan was successfully created."
+      redirect_to user_book_path(user_id: current_user.id, id: @loan.book_id), notice: 'Loan was successfully created.'
     else
       render user_path(user_id: current_user.id)
     end
@@ -50,12 +52,11 @@ class BooksController < ApplicationController
 
   def update
     if @book.update(book_params)
-      redirect_to user_book_path(current_user,@book), notice: "Book updated!"
+      redirect_to user_book_path(current_user, @book), notice: 'Book updated!'
     else
-      render :edit, notice: "Book not updated."
+      render :edit, notice: 'Book not updated.'
     end
   end
-
 
   def new
     @book = Book.new

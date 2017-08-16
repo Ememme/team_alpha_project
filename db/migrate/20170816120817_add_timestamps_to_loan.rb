@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class AddTimestampsToLoan < ActiveRecord::Migration[5.1]
   def change
     add_column :loans, :created_at, :datetime, null: false
