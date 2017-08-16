@@ -13,6 +13,7 @@ Rails.application.routes.draw do
         put 'like', to:    'books#upvote'
         put 'dislike', to: 'books#downvote'
         post 'borrow', to: 'books#borrow'
+        post 'return', to: 'books#return'
       end
       resources :loans, only: [] do
         post 'return', to: 'loans#return'
