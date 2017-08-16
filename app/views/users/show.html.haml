@@ -1,7 +1,9 @@
 .container-fluid
-  %h2= "User #{@user.email}"
+  %h2= "User: #{@user.email}"
   = gravatar_for @user
-  = link_to "Add book to lend", new_user_book_path(@user)
+
+  .btn.btn-success
+    = link_to "Add book to lend", new_user_book_path(@user)
   %br
     .row
       .col-md-6.text-center
