@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class AddOwnerAndBorrowerToBook < ActiveRecord::Migration[5.1]
   def change
     add_reference :books, :borrower, references: :users, index: true

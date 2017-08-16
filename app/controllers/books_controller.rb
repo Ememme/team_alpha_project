@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show destroy edit update borrow return]
   before_action :authenticate_user!, except: [:index]

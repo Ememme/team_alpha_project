@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Book < ApplicationRecord
   STATUS_BORROWED = 1
   STATUS_RETURNED = 0
