@@ -30,7 +30,7 @@
     .well
       .row
         .col-md-4
-          = image_tag("#{book.user.avatar}", alt: "user avatar", style:"width:50px;height:50px;")
+          = image_tag("#{book.user.decorate.avatar_dec}", alt: "user avatar", style:"width:50px;height:50px;")
         .col-md-4
           = link_to "#{book.user.first_name} #{book.user.last_name}", user_path(book.user)
         .col-md-4
