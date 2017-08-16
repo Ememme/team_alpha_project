@@ -17,6 +17,7 @@
           = link_to 'My library', user_path(current_user)
           = link_to 'Books', user_books_path(current_user)
           = link_to 'Sign Out', destroy_user_session_path, method: :delete
+          = link_to 'Edit Profile', edit_user_registration_path
         - else
           = link_to 'Log In', new_user_session_path
   %p.notice= notice
