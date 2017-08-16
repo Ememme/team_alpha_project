@@ -17,5 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :books
+
   get '*path', to: redirect('/')
 end
