@@ -1,12 +1,11 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: %i[show destroy borrow return]
+  before_action :set_book, only: %i[show destroy edit update borrow return]
   before_action :authenticate_user!, except: [:index]
 
   def index
     @books = Book.all
     @q = Book.ransack(params[:q])
     @books = @q.result(distinct: true)
-
   end
 
   def create
@@ -44,6 +43,16 @@ class BooksController < ApplicationController
       redirect_to user_book_path(user_id: current_user.id, id: @loan.book_id), notice: "Loan was successfully created."
     else
       render user_path(user_id: current_user.id)
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @book.update(book_params)
+      redirect_to @book, notice: "Book updated!"
+    else
+      render :edit, notice: "Book not updated."
     end
   end
 
