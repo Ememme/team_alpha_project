@@ -22,9 +22,13 @@
         - if @book.to_borrow?(current_user)
           .btn.btn-success
             = link_to 'Borrow', borrow_user_book_path(@book), method: :post
+        - elsif @book.not_to_borrow?(current_user)
+          %b This book is not borrowed now.
         - elsif @book.to_return?(current_user)
           .btn.btn-success
             = link_to 'Return', return_user_book_path(@book), method: :post
+        - else
+          %b This book is currently borrowed.
 
 .container
   %h2 Users offering this book:
