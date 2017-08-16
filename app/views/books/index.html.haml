@@ -1,3 +1,14 @@
+.row
+  .container
+    %h2.text-center What do you want to read today?
+    .col-sm-6.col-sm-offset-3
+      = search_form_for @q, url: books_path() do |f|
+        #{f.search_field :title_cont, style: 'width: 550px', :placeholder => 'type the title...'}
+    %br/
+    %br
+
+    /*style: 'float: left; width: 60%; display: block'
+
 .col-md-10.col-md-offset-1
   .row
     .panel.panel-default
