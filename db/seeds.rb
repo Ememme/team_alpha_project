@@ -34,7 +34,7 @@ if Book.count < 200
   puts "30 books created"
 end
 
-# Seeds for Loans
+# TODO Seeds for Loans
 
 # if Loan.count < 100
 #   puts "Creating loans..."
