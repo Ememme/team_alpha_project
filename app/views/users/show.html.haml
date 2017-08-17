@@ -1,5 +1,5 @@
 .container-fluid
-  %h2= "User: #{@user.first_name}"
+  %h2= "User: #{@user.decorate.name_dec}"
 
   .btn.btn-primary
     = link_to "Add book to lend", new_user_book_path(@user)
