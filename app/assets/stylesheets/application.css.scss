@@ -6,5 +6,21 @@
 @import "bootstrap";
 
 @import 'global.css.scss';
-@import 'normalize.css';
-@import 'welcome.scss';
+
+.notice {
+  color: #8fe07b;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.alert {
+  color: #b22358;
+  font-weight: bold;
+  font-size: 2em;
+
+}
+
+a:hover {
+  color: white;
+	background: #039BC6;
+}

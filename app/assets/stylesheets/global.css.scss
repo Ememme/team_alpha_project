@@ -86,9 +86,6 @@ header {
         font-size: 1.5rem;
         line-height: 1.5;
         margin-left: 1rem;
-        &:hover {
-          color: $blue;
-        }
       }
     }
   }
@@ -129,9 +126,6 @@ nav {
     a {
       color: #BD1E23;
       font-weight: bold;
-      &:hover {
-        text-decoration: none;
-      }
     }
   }
 }

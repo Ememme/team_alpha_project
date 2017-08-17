@@ -1,26 +1,39 @@
 !!!
 %html
 %head
+  %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
   %title Bookshelfy
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
 %body
-  %header
-    .header_inner
-      = link_to image_tag( 'logo2.png', style:"width:50px;height:50px;"), root_path, id: 'logo'
-      = link_to image_tag( 'bookshelfy1.png', style:"height:50px"), root_path, id: 'logo'
-
-      %nav
-        - if user_signed_in?
-          = link_to 'All users', users_path
-          = link_to 'My library', user_path(current_user)
-          = link_to 'Books', user_books_path(current_user)
-          = link_to 'Sign Out', destroy_user_session_path, method: :delete
-          = link_to 'Edit Profile', edit_user_registration_path
-        - else
-          = link_to 'Log In', new_user_session_path
-  %p.notice= notice
-  %p.alert= alert
-
-= yield
+  %header.navbar.navbar-inverse
+    .header
+      .container-fluid
+        .navbar-header
+        %ul.nav.navbar-nav
+          %li.navbar-text
+            = link_to image_tag( 'logo2.png', style:"width:50px;height:50px;"), root_path, id: 'logo'
+          %li.navbar-text
+            = link_to image_tag( 'bookshelfy1.png', style:"height:50px"), root_path, id: 'logo'
+        %ul.nav.navbar-nav.navbar-right
+          - if user_signed_in?
+            %li.navbar-text
+              = link_to 'My library', user_path(current_user)
+            %li.navbar-text
+              = link_to 'All Books', user_books_path(current_user)
+            %li.navbar-text
+              = link_to 'All users', users_path
+            %li.navbar-text
+              = link_to 'Sign Out', destroy_user_session_path, method: :delete
+            %li.navbar-text
+              = link_to 'Edit Profile', edit_user_registration_path
+          - else
+            %li.navbar-text
+              = link_to 'Log In', new_user_session_path
+  %p.notice
+    = notice
+  %p.alert
+    = alert
+  .container
+    = yield
