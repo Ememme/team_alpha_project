@@ -1,7 +1,19 @@
 $dark_gray: #2B2E2E;
 $light_gray: #C0C1C1;
 $blue: #039BC6;
+$gray-medium-light: #eaeaea;
 
+/*new mixin box sizing*/
+
+/*@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+*/
+
+/*old mixin bold font and box sizing*/
+/*
 @mixin bold_font {
   font-family: "Brandon Grotesque","Helvetica Neue", Helvetica, sans-serif;
   font-weight: bold;
@@ -12,6 +24,33 @@ $blue: #039BC6;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
+*/
+/* new typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 2em;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+/*  text-align: center;
+*/  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
 
 body {
   padding-top: 4.5rem;
@@ -63,7 +102,7 @@ a {
   }
 }
 
-header {
+/*old header {
   background: $dark_gray;
   position: fixed;
   top: 0;
@@ -90,8 +129,28 @@ header {
     }
   }
 }
+*/
 
-footer {
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+
+/*old footer {
   background: $dark_gray;
   width: 100%;
   padding: 2rem 0;
@@ -103,6 +162,34 @@ footer {
     font-size: .85rem;
   }
 }
+*/
+
+/*new footer*/
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
+  a {
+    color: $gray;
+    &:hover {
+      color: $gray-darker;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
 
 input[type="text"], input[type="email"], input[type="password"], textarea {
   width: 100%;
@@ -120,7 +207,7 @@ textarea {
 }
 
 
-nav {
+/*nav {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
   .navbar-brand {
     a {
@@ -129,3 +216,4 @@ nav {
     }
   }
 }
+*/

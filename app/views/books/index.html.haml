@@ -1,9 +1,9 @@
 .row
   .container
-    %h2.text-center What do you want to read today?
+    %h1.text-center What do you want to read today?
     .col-sm-6.col-sm-offset-3
       = search_form_for @q, url: books_path() do |f|
-        #{f.search_field :title_cont, style: 'width: 550px', :placeholder => 'type the title...'}
+        #{f.search_field :title_cont, style: 'width: 530px',:placeholder => 'type the title...'}
     %br/
     %br
 
