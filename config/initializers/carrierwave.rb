@@ -11,7 +11,7 @@ CarrierWave.configure do |config|
       :aws_secret_access_key => ENV['aws_secret_access_key'],
       :region                => ENV['region']
     }
-    config.fog_directory  = 'ng-code-college-foxtrot'
+    config.fog_directory  = 'bookshelfy'
     # config.fog_host       = 'http://www.example.com' 
     config.fog_public     = true                                    # optional, defaults to true
     config.fog_attributes = {'Cache-Control' => 'max-age=315576000'}  # optional, defaults to {}
