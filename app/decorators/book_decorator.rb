@@ -7,7 +7,7 @@ class BookDecorator < ApplicationDecorator
     if cover.present?
       cover
     else
-      cover = "default_cover.jpg"
+      'default_cover.jpg'
     end
   end
 end

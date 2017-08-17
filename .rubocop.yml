@@ -8,7 +8,7 @@ Metrics/AbcSize:
   Max: 20
 MethodLength:
   CountComments: false
-  Max: 10
+  Max: 15
 ClassLength:
   CountComments: false
   Max: 100
