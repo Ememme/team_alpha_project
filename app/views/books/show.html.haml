@@ -19,7 +19,7 @@
         = "#{@book.user.first_name} #{@book.user.last_name}"
         //decorator
         %br/
-     
+
         - if @book.to_borrow?(current_user)
           .btn.btn-primary
 
@@ -34,14 +34,16 @@
 
 .container
   %h2 Users offering this book:
-  - Book.where(title: @book.title) && Book.where(author: @book.author).each do |book|
+  - @book.other_books.each do |book|
     %br/
     .well
       .row
-        .col-md-4
+        .col-md-2
           = image_tag("#{book.user.decorate.avatar_dec}", alt: "user avatar", style:"width:50px;height:50px;")
         .col-md-4
           = link_to "#{book.user.first_name} #{book.user.last_name}", user_path(book.user)
+        .col-md-2
+          = image_tag("#{book.decorate.cover_dec}", alt: "book cover", style:"width:50px;height:50px;")
         .col-md-4
           = link_to "#{book.id} #{book.title} #{book.author}", user_book_path(current_user, book)
 
