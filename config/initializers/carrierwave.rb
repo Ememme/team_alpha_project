@@ -1,11 +1,18 @@
 CarrierWave.configure do |config|
-  config.fog_provider = 'fog/aws'                        # required
-  config.fog_credentials = {
-    provider:              'AWS',                        # required
-    aws_access_key_id:     'AKIAIYAC4TMGOOJLFOVQ',                        # required
-    aws_secret_access_key: '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',                        # required
+  if Rails.env.production?
+    config.storage = :fog
+    config.fog_credentials = {
+    :provider              => 'AWS',
+    :aws_access_key_id     => ENV['aws_access_key_id'],
+    :aws_secret_access_key => ENV['aws_secret_access_key']
   }
-  config.fog_directory  = 'bookshelfy'                          # required
-  config.fog_public     = false                                        # optional, defaults to true
-  config.fog_attributes = { cache_control: "public, max-age=#{365.day.to_i}" } # optional, defaults to {}
+  config.fog_directory  = 'bookshelfy'
+  config.fog_host       = 'http://www.example.com' 
+  config.fog_public     = true                                    # optional, defaults to true
+  config.fog_attributes = {'Cache-Control' => 'max-age=315576000'}  # optional, defaults to {}
+else
+ #for development and testing locally
+  config.storage = :file
+  config.enable_processing = false
+ end
 end
