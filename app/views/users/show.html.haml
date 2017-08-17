@@ -1,5 +1,6 @@
 .container-fluid
   %h2= "User: #{@user.first_name}"
+
   /TODO = gravatar_for @user
   .btn.btn-primary
     = link_to "Add book to lend", new_user_book_path(@user)
@@ -15,7 +16,7 @@
               .col-md-4
                 .panel.panel-default
                   .panel-body
-                    = link_to image_tag("#{book.decorate.cover_dec}", 
+                    = link_to image_tag("#{book.decorate.cover_dec}",
                                 alt: "book cover", style:"width:100px;height:100px;"),
                                 user_book_path(@user,book)
                   .panel-footer
