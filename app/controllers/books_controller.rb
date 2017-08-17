@@ -28,7 +28,8 @@ class BooksController < ApplicationController
       status: Book::STATUS_BORROWED
     )
     if @loan.save!
-      redirect_to user_book_path(user_id: current_user.id, id: @loan.book_id), notice: 'Loan was successfully created.'
+      redirect_to user_book_path(user_id: current_user.id, id: @loan.book_id),
+      notice: 'Loan was successfully created.'
     else
       render user_path(user_id: current_user.id)
     end
@@ -42,7 +43,8 @@ class BooksController < ApplicationController
       status: Book::STATUS_RETURNED
     )
     if @loan.save!
-      redirect_to user_book_path(user_id: current_user.id, id: @loan.book_id), notice: 'Loan was successfully created.'
+      redirect_to user_book_path(user_id: current_user.id, id: @loan.book_id),
+        notice: 'Loan was successfully created.'
     else
       render user_path(user_id: current_user.id)
     end
@@ -81,6 +83,13 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :author, :description, :user_id, :book_uid, :cover)
+    params.require(:book).permit(
+      :title,
+      :author,
+      :description,
+      :user_id,
+      :book_uid,
+      :cover
+    )
   end
 end

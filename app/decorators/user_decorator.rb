@@ -7,7 +7,7 @@ class UserDecorator < ApplicationDecorator
     if avatar.present?
       avatar
     else
-      avatar = "default_avatar.png"
+      'default_avatar.png'
     end
   end
 

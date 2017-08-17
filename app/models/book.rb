@@ -29,7 +29,6 @@ class Book < ApplicationRecord
 
   def other_books
     books = Book.where(title: title) && Book.where(author: author)
-    other_books = books.reject {|b| b.id == id}
-
+    books.reject { |b| b.id == id }
   end
 end
