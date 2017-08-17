@@ -10,5 +10,4 @@ class User < ApplicationRecord
   # TODO validates :login, presence: { message: "can't be blank" }
 
   acts_as_votable
-
 end
