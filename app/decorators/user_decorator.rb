@@ -7,7 +7,16 @@ class UserDecorator < ApplicationDecorator
     if avatar.present?
       avatar
     else
-      avatar = "default_avatar.png"
+      'default_avatar.png'
+    end
+  end
+
+  def name_dec
+    name = "#{first_name} #{last_name}"
+    if first_name.to_s.empty? && last_name.to_s.empty?
+      email
+    else
+      name
     end
   end
 
