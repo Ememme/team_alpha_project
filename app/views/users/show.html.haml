@@ -1,35 +1,34 @@
 .container-fluid
-  %h2= "User: #{@user.email}"
-  = gravatar_for @user
-
+  %h2= "User: #{@user.first_name}"
+  /TODO = gravatar_for @user
   .btn.btn-primary
     = link_to "Add book to lend", new_user_book_path(@user)
+  %br/
   %br
     .row
       .col-md-6.text-center
         .well
-          %h2 My books to lend:
-          @loan
-          - @user.books.each do |book|
-            %br/
-            return book
-            %p= link_to "Title: #{book.title}, Author: #{book.author}", user_book_path(@user,book)
-            %br/
-            -# %p= "Borrowed by #{loan.book.user_id}"
-            %br/
-            %p= "Returned"
-            -# - if book.book_status == 1
-            -#   = "Borrowed by #{book.borrower_id}"
-            -#   .btn.btn-success Change book status
-              //, book.change_book_status
-            %br/
-
+          .row
+            %h2 Books owned:
+            %br
+            - @user.books.each do |book|
+              .col-md-4
+                .panel.panel-default
+                  .panel-body
+                    = link_to image_tag("#{book.decorate.cover_dec}", 
+                                alt: "book cover", style:"width:100px;height:100px;"),
+                                user_book_path(@user,book)
+                  .panel-footer
+                    = link_to "#{book.title}", user_book_path(@user,book)
       .col-md-6.text-center
         .well
-          %h2 My borrowed books:
-          - @user.loans.each do |loan|
-            from
-            %br/
-            %p= link_to "Book: #{loan.book.title} is borrowed by #{loan.user.email}", user_book_path(@user,loan.book)
-
-            %br/
+          .row
+            %h2 Borrowed books:
+            %br
+            - @user.currently_borrowed.each do |loan|
+              .col-md-4
+                .panel.panel-default
+                  .panel-body
+                    = link_to image_tag("#{loan.book.decorate.cover_dec}", alt: "book cover", style:"width:100px;height:100px;" ), user_book_path(@user,loan.book)
+                  .panel-footer
+                    = link_to "#{loan.book.title}", user_book_path(@user,loan.book)
