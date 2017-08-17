@@ -1,7 +1,6 @@
 .container-fluid
   %h2= "User: #{@user.first_name}"
 
-  /TODO = gravatar_for @user
   .btn.btn-primary
     = link_to "Add book to lend", new_user_book_path(@user)
   %br/

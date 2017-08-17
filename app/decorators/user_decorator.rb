@@ -19,5 +19,4 @@ class UserDecorator < ApplicationDecorator
       name
     end
   end
-
 end
