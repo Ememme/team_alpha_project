@@ -9,7 +9,7 @@
 
   - @users.each do |user|
     .col-md-2
-      .well.well-sm
-        %p
-          = image_tag("#{user.decorate.avatar_dec}", alt: "user avatar", style:"width:100px;height:100px;")
-          = link_to user.login, user
+      .well.well-sm.text-center
+        = image_tag("#{user.decorate.avatar_dec}", alt: "user avatar", style:"width:100px;height:100px;")
+        %br
+        = link_to user.decorate.name_dec, user
