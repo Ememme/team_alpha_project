@@ -26,4 +26,13 @@ class Book < ApplicationRecord
   def to_return?(current_user)
     loans.last.status == STATUS_BORROWED && user == current_user
   end
+
+  def other_books
+    books = Book.where(title: title) && Book.where(author: author)
+    other_books = books.reject {|b| b.id == id}
+
+#     reject {|item| block } → new_ary
+#
+# Returns a new array containing the items in self for which the given block is not true. The ordering of non-rejected elements is maintained.
+  end
 end
