@@ -10,4 +10,8 @@ class User < ApplicationRecord
   # TODO validates :login, presence: { message: "can't be blank" }
 
   acts_as_votable
+
+  def currently_borrowed
+  	loans.where(status: Book::STATUS_BORROWED).order(created_at: :desc).uniq { |l| l.book_id }
+  end
 end
