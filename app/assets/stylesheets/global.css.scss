@@ -94,6 +94,12 @@ button, .button {
   margin: 2rem 0;
 }
 
+.btn {
+  a {
+    color: white;
+  }
+}
+
 a {
   color: $blue;
   text-decoration: none;
