@@ -7,31 +7,34 @@
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
 %body
-  %header.navbar.navbar-inverse
-    .header
-      .container-fluid
-        .navbar-header
-        %ul.nav.navbar-nav
-          %li.navbar-text
-            = link_to image_tag( 'bookshelfy-logo.png', style:"height:70px"), root_path, id: 'logo'
-        %ul.nav.navbar-nav.navbar-right
-          - if user_signed_in?
-            %li.navbar-text
-              = link_to 'My library', user_path(current_user)
-            %li.navbar-text
-              = link_to 'All Books', user_books_path(current_user)
-            %li.navbar-text
-              = link_to 'All users', users_path
-            %li.navbar-text
-              = link_to 'Sign Out', destroy_user_session_path, method: :delete
-            %li.navbar-text
-              = link_to 'Edit Profile', edit_user_registration_path
-          - else
-            %li.navbar-text
-              = link_to 'Log In', new_user_session_path
+  = render 'layouts/header'
+
+  / %header.navbar.navbar-inverse
+  /   .header
+  /     .container-fluid
+  /       .navbar-header
+  /       %ul.nav.navbar-nav
+  /         %li.navbar-text
+  /           = link_to image_tag( 'bookshelfy-logo.png', style:"height:70px"), root_path, id: 'logo'
+  /       %ul.nav.navbar-nav.navbar-right
+  /         - if user_signed_in?
+  /           %li.navbar-text
+  /             = link_to 'My library', user_path(current_user)
+  /           %li.navbar-text
+  /             = link_to 'All Books', user_books_path(current_user)
+  /           %li.navbar-text
+  /             = link_to 'All users', users_path
+  /           %li.navbar-text
+  /             = link_to 'Sign Out', destroy_user_session_path, method: :delete
+  /           %li.navbar-text
+  /             = link_to 'Edit Profile', edit_user_registration_path
+  /         - else
+  /           %li.navbar-text
+  /             = link_to 'Log In', new_user_session_path
   %p.notice
     = notice
   %p.alert
     = alert
   .container
     = yield
+= render 'layouts/footer'

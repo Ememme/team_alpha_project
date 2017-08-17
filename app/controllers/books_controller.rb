@@ -1,13 +1,17 @@
 # frozen_string_literal: true
 
 class BooksController < ApplicationController
-  before_action :set_book, only: %i[show destroy edit update borrow return]
+  before_action :set_book, except: %i[index new create]
   before_action :authenticate_user!, except: [:index]
 
   def index
     @books = Book.all
     @q = Book.ransack(params[:q])
     @books = @q.result(distinct: true)
+  end
+
+  def new
+    @book = Book.new
   end
 
   def create
@@ -50,16 +54,17 @@ class BooksController < ApplicationController
 
   def edit; end
 
+  def destroy
+    @book.destroy
+    redirect_to user_path(current_user)
+  end
+
   def update
     if @book.update(book_params)
       redirect_to user_book_path(current_user, @book), notice: 'Book updated!'
     else
       render :edit, notice: 'Book not updated.'
     end
-  end
-
-  def new
-    @book = Book.new
   end
 
   def upvote
