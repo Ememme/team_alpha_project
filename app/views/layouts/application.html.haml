@@ -31,10 +31,13 @@
   /         - else
   /           %li.navbar-text
   /             = link_to 'Log In', new_user_session_path
-  %p.notice
-    = notice
-  %p.alert
-    = alert
+
   .container
+    %br/
+    %br/
+    %p.notice
+    = notice
+    %p.alert
+    = alert
     = yield
 = render 'layouts/footer'
